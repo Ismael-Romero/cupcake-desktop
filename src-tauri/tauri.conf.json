@@ -42,7 +42,9 @@
         "resizable": true,
         "title": "cupcake-desktop",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "minWidth": 800,
+        "minHeight": 600
       }
     ]
   }

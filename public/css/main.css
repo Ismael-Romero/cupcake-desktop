@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+@font-face {
+  font-family: "Noto Regular";
+  src: url("/fonts/Noto/NotoSansMiao-Regular.ttf");
+}
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("/fonts/OpenSans/OpenSans-Light.ttf");
+}
+@font-face {
+  font-family: "Open Sans Regular";
+  src: url("/fonts/OpenSans/OpenSans-Regular.ttf");
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Regular", Calibri, sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.3rem;
+}
+
+p {
+  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
+  font-size: 1rem;
+}
+
+a {
+  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
+  font-size: 1rem;
+  color: blue;
+}
+
+.text-regular {
+  font-family: "Open Sans Regular", "Calibri Light", sans-serif;
+}
+
+.text-light {
+  font-family: "Open Sans Light", "Calibri Light", sans-serif;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.cross-out {
+  text-decoration: line-through;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.btn {
+  position: relative;
+  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
+  font-size: 14px;
+  background-color: rgb(13, 110, 253);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  margin: 5px 10px;
+  padding: 10px;
+  width: calc(100% - 20px);
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+.btn.auto {
+  width: auto;
+}
+.btn.small {
+  font-size: 12px;
+  padding: 5px 15px;
+}
+.btn.large {
+  font-size: 16px;
+  padding: 10px;
+}
+.btn.success {
+  color: rgb(5, 27, 17);
+  background-color: rgb(166, 233, 214);
+}
+.btn.success:focus {
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(25, 135, 84);
+  outline: none;
+}
+.btn.danger {
+  color: rgb(255, 255, 255);
+  background-color: rgb(227, 93, 106);
+}
+.btn.danger:focus {
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(44, 11, 14);
+  outline: none;
+}
+.btn.warning {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 218, 106);
+}
+.btn.warning:focus {
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(255, 193, 7);
+  outline: none;
+}
+.btn:focus {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(3, 22, 51);
+  outline: none;
+}
+
+input {
+  position: relative;
+  border: 1px solid #D3D3D3;
+  border-radius: 8px;
+  padding: 8px;
+  width: calc(100% - 18px);
+}
+input:focus {
+  border: 1px solid rgb(61, 139, 253);
+  outline: none;
+}
+input.focus-invalid {
+  border: 1px solid rgb(227, 93, 106);
+  outline: none;
+}
+
+/*# sourceMappingURL=main.css.map */
