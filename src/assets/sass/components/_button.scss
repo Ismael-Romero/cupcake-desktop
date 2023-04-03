@@ -10,18 +10,17 @@
 
     color: white;
 
-    margin: 5px 10px;
+    margin: 20px 0;
     padding: 10px;
 
-    width: calc(100% - 20px);
+    width: 100%;
     max-width: 100%;
 
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 
-    transition-duration: .1s;
-    transition-timing-function: ease-in-out;
+    @include transition-basic(.1s);
 
     &.auto {
         width: auto;
@@ -40,40 +39,20 @@
     &.success {
         color: $color-green-900;
         background-color: $color-teal-200;
-        &:focus {
-            transition-duration: .6s;
-            transition-timing-function: ease-in-out;
-            border: 1px solid $color-green;
-            outline: none;
-        }
+        @include focus-outline(.6s, $color-green);
     }
 
     &.danger {
         color: $color-white;
         background-color: $color-red-400;
-        &:focus {
-            transition-duration: .6s;
-            transition-timing-function: ease-in-out;
-            border: 1px solid $color-red-900;
-            outline: none;
-        }
+        @include focus-outline(.6s, $color-red-900);
     }
 
     &.warning{
         color: $color-black;
         background-color: $color-yellow-300;
-        &:focus {
-            transition-duration: .6s;
-            transition-timing-function: ease-in-out;
-            border: 1px solid $color-yellow;
-            outline: none;
-        }
+        @include focus-outline(.6s, $color-yellow);
     }
 
-    &:focus{
-        transition-duration: .3s;
-        transition-timing-function: ease-in-out;
-        border: 1px solid $color-blue-900;
-        outline: none;
-    }
+    @include focus-outline(.6s, $color-blue-900);
 }

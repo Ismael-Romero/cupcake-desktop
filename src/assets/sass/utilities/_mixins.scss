@@ -4,3 +4,16 @@
         src: url($path);
     }
 }
+
+@mixin transition-basic ($duration){
+    transition-duration: $duration;
+    transition-timing-function: ease-in-out;
+}
+
+@mixin focus-outline ($duration, $color){
+    &:focus{
+        @include transition-basic($duration);
+        border: 1px solid $color;
+        outline: none;
+    }
+}

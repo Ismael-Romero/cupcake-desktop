@@ -87,9 +87,9 @@ a {
   border: none;
   border-radius: 8px;
   color: white;
-  margin: 5px 10px;
+  margin: 20px 0;
   padding: 10px;
-  width: calc(100% - 20px);
+  width: 100%;
   max-width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -139,7 +139,7 @@ a {
   outline: none;
 }
 .btn:focus {
-  transition-duration: 0.3s;
+  transition-duration: 0.6s;
   transition-timing-function: ease-in-out;
   border: 1px solid rgb(3, 22, 51);
   outline: none;
@@ -147,10 +147,10 @@ a {
 
 input {
   position: relative;
-  border: 1px solid #D3D3D3;
+  border: 1px solid #D0D0D0;
   border-radius: 8px;
-  padding: 8px;
-  width: calc(100% - 18px);
+  padding: 11px;
+  width: calc(100% - 22px);
 }
 input:focus {
   border: 1px solid rgb(61, 139, 253);
@@ -159,6 +159,145 @@ input:focus {
 input.focus-invalid {
   border: 1px solid rgb(227, 93, 106);
   outline: none;
+}
+
+.selected-container {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  width: 100%;
+  margin: 5px 0;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+.selected-container label {
+  margin: 2px 0;
+  font-size: 14px;
+  font-family: "Noto Regular", "Segoe UI", sans-serif;
+}
+.selected-container button {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  align-items: stretch;
+  padding: 10px 10px;
+  border: 1px solid #D0D0D0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  text-overflow: ellipsis;
+  outline: none;
+  width: 100%;
+}
+.selected-container button img {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.selected-container button span {
+  position: relative;
+  margin: auto;
+  flex-grow: 6;
+  justify-content: center;
+  text-align: left;
+}
+.selected-container button i {
+  position: relative;
+  margin: auto;
+  flex-grow: 1;
+  justify-content: center;
+  text-align: end;
+}
+.selected-container button:focus {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(61, 139, 253);
+  outline: none;
+}
+.selected-container ul {
+  position: absolute;
+  display: none;
+  justify-self: flex-start;
+  align-self: flex-start;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background-color: rgb(255, 255, 255);
+  list-style-type: none;
+  top: 100%;
+  margin: 5px auto auto;
+  padding: 8px 0;
+  width: 100%;
+  max-height: 120px;
+  overflow: scroll;
+  overflow-x: hidden;
+  z-index: 1;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.selected-container ul li span {
+  padding: 8px;
+  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
+  font-size: 14px;
+  display: block;
+}
+.selected-container ul li span:hover {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.selected-container ul.show {
+  display: block;
+}
+
+.input-group {
+  position: relative;
+  margin: 10px 0;
+  width: 100%;
+  height: auto;
+}
+.input-group label {
+  font-family: "Open Sans Regular";
+  font-weight: 500;
+  font-size: 14px;
+}
+.input-group.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.input-group.row label {
+  margin: 0 0 15px;
+}
+.input-group.row input {
+  flex-grow: 4;
+}
+.input-group.column {
+  position: relative;
+  display: grid;
+  grid-area: auto;
+  grid-column: 4;
+  grid-row-gap: 0;
+  grid-column-gap: 1rem;
+  grid-auto-rows: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 5rem), 1fr));
+  align-items: center;
+  justify-content: stretch;
+}
+.input-group.column label {
+  position: relative;
+  height: auto;
+  max-height: 2.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  grid-column: span 2;
+}
+.input-group.column input {
+  grid-column: span 2;
 }
 
 /*# sourceMappingURL=main.css.map */

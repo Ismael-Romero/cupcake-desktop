@@ -1,0 +1,113 @@
+.selected-container {
+    position: relative;
+    background-color: $color-white;
+
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    width: 100%;
+
+    margin: 5px 0;
+
+    transition-duration: .1s;
+    transition-timing-function: ease-in-out;
+
+    label {
+        margin: 2px 0;
+        font-size: 14px;
+        font-family: $ff-title-regular, "Segoe UI", sans-serif;
+    }
+
+    button {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 10px;
+        align-items: stretch;
+        padding: 10px 10px;
+
+        border: 1px solid #D0D0D0;
+        background-color: $color-white;
+        border-radius: 8px;
+
+        text-overflow: ellipsis;
+        outline: none;
+
+        width: 100%;
+
+        img {
+            position: relative;
+            width: 25px;
+            height: 25px;
+
+            border-radius: calc(100% / 2);
+        }
+
+        span {
+            position: relative;
+            margin: auto;
+            flex-grow: 6;
+            justify-content: center;
+            text-align: left;
+        }
+
+        i {
+            position: relative;
+            margin: auto;
+            flex-grow: 1;
+
+            justify-content: center;
+            text-align: end;
+        }
+
+        @include focus-outline(.3s, $color-blue-400);
+    }
+
+    ul {
+        position: absolute;
+        display: none;
+        justify-self: flex-start;
+        align-self: flex-start;
+
+        box-sizing: border-box;
+        box-shadow: 0 0 20px $color-shadow-black-2;
+        background-color: $color-white;
+
+        list-style-type: none;
+
+        top: 100%;
+        margin: 5px auto auto;
+        padding: 8px 0;
+
+        width: calc(100%);
+        max-height: 120px;
+
+        overflow: scroll;
+        overflow-x: hidden;
+
+        z-index: 1;
+        transition-duration: .2s;
+        transition-timing-function: ease-in-out;
+
+        li {
+            span {
+                padding: 8px;
+
+                font-family: $ff-text-regular, "Segoe UI", sans-serif;
+                font-size: 14px;
+                display: block;
+                &:hover{
+                    transition-duration: .3s;
+                    transition-timing-function: ease-in-out;
+                    background-color: $color-shadow-black-1;
+                }
+            }
+        }
+
+        &.show {
+            display: block;
+        }
+    }
+}

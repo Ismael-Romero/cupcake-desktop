@@ -38,6 +38,7 @@
     },
     "windows": [
       {
+        "center": true,
         "fullscreen": false,
         "resizable": true,
         "title": "cupcake-desktop",

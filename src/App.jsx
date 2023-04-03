@@ -1,67 +1,58 @@
-import { Input } from "./components/index.jsx";
-import { useForm } from "./hooks/useForm.js";
+import { fakeListDataShort } from "./data/fake-list.js";
+import {useState} from "react";
+import {LayoutInputGroup} from "./components/layouts/index.jsx";
+import {Button, Input, Link, Selected, Text, Title} from "./components/index.jsx";
+import {useForm} from "./hooks/useForm.js";
 
 function App() {
 	
-	const formInit = {
-		fullName: {
-			id: 'in-fullName',
-			key: 'fullName',
+	const initForm = {
+		name: {
+			id: 'in-name',
+			key: 'name',
 			value: '',
-			required: true
-		},
-		age: {
-			id: 'in-age',
-			key: 'age',
-			value: '',
-			required: false
-		},
-		date: {
-			id: 'in-date',
-			key: 'date',
-			value: '',
-			required: true
+			required: false,
 		},
 	};
 	
-	const {onChange, onReset, stateCurrent, isValidFields} = useForm(formInit);
-	
-	const {fullName, age, date} = stateCurrent;
-
-	function Hello (e) {
-		e.preventDefault();
-		if (isValidFields() > 0){
-			console.log('Completa el formulacrio');
-		}else{
-			onReset(formInit);
-		}
-	}
+	const [optionId, setOptionId] = useState('');
+	const {onChange, onReset, stateCurrent, isValidFields} = useForm(initForm);
+	const {name} = stateCurrent;
 	
 	return (
-        <div className="container">
+        <div className="container" style={{ width:440, height: 300, margin: "auto"}}>
+	        <br/>
+
+	        <Title Text='Login'/>
+	        <Link Text='This is a link'/>
+	        <Text Content='Esto es un texto'/>
 	        
-	        <form style={{width: 300, height: 400, marginTop: 100, marginLeft: 100}}>
-		        
+	        <LayoutInputGroup Label='Full Name' Type='row'>
 		        <Input
-			        Field={fullName}
-			        OnChange={onChange}
-			        Placeholder='Ingresa tu Nombre:'
-		        />
-		
+			        Field={name}
+			        Placeholder='Hola Mundo'
+			        OnChange={onChange}/>
+			</LayoutInputGroup>
+	        
+	        <LayoutInputGroup Label='Full Name' Type='column'>
 		        <Input
-			        Field={date}
-			        OnChange={onChange}
-			        Placeholder='Tu fecha'
-		        />
-		
-		        <Input
-			        Field={age}
-			        OnChange={onChange}
-			        Placeholder='tu edad'
-		        />
-		        
-		        <button onClick={(e) => Hello(e)}> PUSH </button>
-	        </form>
+			        Field={name}
+			        Placeholder='Hola Mundo'
+			        OnChange={onChange}/>
+	        </LayoutInputGroup>
+	        
+	        <Selected
+		       Field={{
+				   id: 'list-users',
+			       label: 'Facturas emitidas',
+			       placeholder: 'Selecciona una factura',
+		       }}
+		       Data={fakeListDataShort}
+		       HandleClick={setOptionId}
+	        />
+	        
+	        <Button Text='Hola Mundo' Type='warning'/>
+
         </div>
     );
 }

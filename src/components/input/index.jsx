@@ -1,5 +1,3 @@
-// Id, Type, Placeholder, Required, Value, OnChange, Key
-
 export const Input = ({Field, Type, Placeholder, OnChange}) => {
 	
 	return (

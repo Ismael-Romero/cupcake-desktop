@@ -1,10 +1,10 @@
 input {
     position: relative;
-    border: 1px solid #D3D3D3;
+    border: 1px solid #D0D0D0;
     border-radius: 8px;
-    padding: 8px;
+    padding: 11px;
 
-    width: calc(100% - 18px);
+    width: calc(100% - 22px);
 
     &:focus{
         border: 1px solid $color-blue-400;
