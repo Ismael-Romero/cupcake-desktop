@@ -1,5 +1,4 @@
 import { useState } from "react";
-import {putFieldFocusInvalid, removeFieldFocusInvalid} from "../helpers/form/invalidField.js";
 /**
  * Hook that returns an object with the current state of the form,
  * as well as functions to change the state of the form and check the validity of the form fields.
@@ -33,24 +32,34 @@ export const useForm = (form) => {
 	
 	const onReset = (form) => {
 		Object.keys(form).map((key) => {
-			removeFieldFocusInvalid(form[key].id);
+			setFocusInvalidField(form[key].id);
+			
 		});
 		setState(form);
-	}
+	};
 	
 	const isValidFields = () => {
-		let invalidFields = 0;
+		let invalidFields = true;
 		Object.keys(state).map((key) => {
-			removeFieldFocusInvalid(state[key].id)
+			setFocusInvalidField(state[key].id);
 			if (state[key].required){
 				if (!state[key].value){
-					putFieldFocusInvalid(state[key].id);
-					invalidFields++;
+					setFocusInvalidField(state[key].id);
+					invalidFields = false;
 				}
 			}
 		});
 		return invalidFields;
-	}
+	};
+	
+	const setFocusInvalidField = (id) => {
+		const element = document.getElementById(id);
+		if (!element.hasAttribute('class')) {
+			element.setAttribute('class', 'focus-invalid');
+		}else{
+			element.removeAttribute('class');
+		}
+	};
 	
 	return {
 		...state,

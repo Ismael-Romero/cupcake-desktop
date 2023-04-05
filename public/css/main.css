@@ -1,23 +1,30 @@
 body {
+  display: flex;
   margin: 0;
   padding: 0;
   background-color: rgb(255, 255, 255);
 }
+body #root {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
 
 @font-face {
-  font-family: "Noto Regular";
-  src: url("/fonts/Noto/NotoSansMiao-Regular.ttf");
+  font-family: "Nunito Regular";
+  src: url("/fonts/Nunito/Nunito-Regular.ttf");
 }
 @font-face {
-  font-family: "Open Sans Light";
-  src: url("/fonts/OpenSans/OpenSans-Light.ttf");
+  font-family: "Nunito Light";
+  src: url("/fonts/Nunito-Sans/NunitoSans-Light.ttf");
 }
 @font-face {
-  font-family: "Open Sans Regular";
-  src: url("/fonts/OpenSans/OpenSans-Regular.ttf");
+  font-family: "Nunito Regular";
+  src: url("/fonts/Nunito-Sans/NunitoSans-Regular.ttf");
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Noto Regular", Calibri, sans-serif;
+  margin: 0;
+  font-family: "Nunito Regular", Calibri, sans-serif;
 }
 
 h1 {
@@ -44,23 +51,30 @@ h6 {
   font-size: 1.3rem;
 }
 
+label {
+  margin: 0;
+  font-family: "Nunito Regular", "Segoe UI", sans-serif;
+  font-size: 1rem;
+}
+
 p {
-  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
+  margin: 0;
+  font-family: "Nunito Regular", "Segoe UI", sans-serif;
   font-size: 1rem;
 }
 
 a {
-  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
+  font-family: "Nunito Regular", "Segoe UI", sans-serif;
   font-size: 1rem;
   color: blue;
 }
 
 .text-regular {
-  font-family: "Open Sans Regular", "Calibri Light", sans-serif;
+  font-family: "Nunito Regular", "Calibri Light", sans-serif;
 }
 
 .text-light {
-  font-family: "Open Sans Light", "Calibri Light", sans-serif;
+  font-family: "Nunito Light", "Calibri Light", sans-serif;
 }
 
 .bolder {
@@ -77,227 +91,6 @@ a {
 
 .underline {
   text-decoration: underline;
-}
-
-.btn {
-  position: relative;
-  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
-  font-size: 14px;
-  background-color: rgb(13, 110, 253);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  margin: 20px 0;
-  padding: 10px;
-  width: 100%;
-  max-width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-}
-.btn.auto {
-  width: auto;
-}
-.btn.small {
-  font-size: 12px;
-  padding: 5px 15px;
-}
-.btn.large {
-  font-size: 16px;
-  padding: 10px;
-}
-.btn.success {
-  color: rgb(5, 27, 17);
-  background-color: rgb(166, 233, 214);
-}
-.btn.success:focus {
-  transition-duration: 0.6s;
-  transition-timing-function: ease-in-out;
-  border: 1px solid rgb(25, 135, 84);
-  outline: none;
-}
-.btn.danger {
-  color: rgb(255, 255, 255);
-  background-color: rgb(227, 93, 106);
-}
-.btn.danger:focus {
-  transition-duration: 0.6s;
-  transition-timing-function: ease-in-out;
-  border: 1px solid rgb(44, 11, 14);
-  outline: none;
-}
-.btn.warning {
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 218, 106);
-}
-.btn.warning:focus {
-  transition-duration: 0.6s;
-  transition-timing-function: ease-in-out;
-  border: 1px solid rgb(255, 193, 7);
-  outline: none;
-}
-.btn:focus {
-  transition-duration: 0.6s;
-  transition-timing-function: ease-in-out;
-  border: 1px solid rgb(3, 22, 51);
-  outline: none;
-}
-
-input {
-  position: relative;
-  border: 1px solid #D0D0D0;
-  border-radius: 8px;
-  padding: 11px;
-  width: calc(100% - 22px);
-}
-input:focus {
-  border: 1px solid rgb(61, 139, 253);
-  outline: none;
-}
-input.focus-invalid {
-  border: 1px solid rgb(227, 93, 106);
-  outline: none;
-}
-
-.selected-container {
-  position: relative;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: row;
-  flex-flow: row;
-  flex-wrap: wrap;
-  row-gap: 5px;
-  width: 100%;
-  margin: 5px 0;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-}
-.selected-container label {
-  margin: 2px 0;
-  font-size: 14px;
-  font-family: "Noto Regular", "Segoe UI", sans-serif;
-}
-.selected-container button {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  column-gap: 10px;
-  align-items: stretch;
-  padding: 10px 10px;
-  border: 1px solid #D0D0D0;
-  background-color: rgb(255, 255, 255);
-  border-radius: 8px;
-  text-overflow: ellipsis;
-  outline: none;
-  width: 100%;
-}
-.selected-container button img {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-}
-.selected-container button span {
-  position: relative;
-  margin: auto;
-  flex-grow: 6;
-  justify-content: center;
-  text-align: left;
-}
-.selected-container button i {
-  position: relative;
-  margin: auto;
-  flex-grow: 1;
-  justify-content: center;
-  text-align: end;
-}
-.selected-container button:focus {
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-  border: 1px solid rgb(61, 139, 253);
-  outline: none;
-}
-.selected-container ul {
-  position: absolute;
-  display: none;
-  justify-self: flex-start;
-  align-self: flex-start;
-  box-sizing: border-box;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  background-color: rgb(255, 255, 255);
-  list-style-type: none;
-  top: 100%;
-  margin: 5px auto auto;
-  padding: 8px 0;
-  width: 100%;
-  max-height: 120px;
-  overflow: scroll;
-  overflow-x: hidden;
-  z-index: 1;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-}
-.selected-container ul li span {
-  padding: 8px;
-  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
-  font-size: 14px;
-  display: block;
-}
-.selected-container ul li span:hover {
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-.selected-container ul.show {
-  display: block;
-}
-
-.input-group {
-  position: relative;
-  margin: 10px 0;
-  width: 100%;
-  height: auto;
-}
-.input-group label {
-  font-family: "Open Sans Regular";
-  font-weight: 500;
-  font-size: 14px;
-}
-.input-group.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.input-group.row label {
-  margin: 0 0 15px;
-}
-.input-group.row input {
-  flex-grow: 4;
-}
-.input-group.column {
-  position: relative;
-  display: grid;
-  grid-area: auto;
-  grid-column: 4;
-  grid-row-gap: 0;
-  grid-column-gap: 1rem;
-  grid-auto-rows: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 5rem), 1fr));
-  align-items: center;
-  justify-content: stretch;
-}
-.input-group.column label {
-  position: relative;
-  height: auto;
-  max-height: 2.5rem;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  grid-column: span 2;
-}
-.input-group.column input {
-  grid-column: span 2;
 }
 
 /*# sourceMappingURL=main.css.map */

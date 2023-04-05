@@ -1,13 +1,7 @@
-@import "./utilities/_functions.scss";
+@import "./utilities/variables/_colors.scss";
+@import "./utilities/variables/_typography.scss";
 @import "./utilities/_mixins.scss";
-@import "./utilities/_variables.scss";
+@import "./utilities/_functions.scss";
 
-@import "./base/base.scss";
-@import "./base/typography.scss";
-
-
-@import "./components/_button.scss";
-@import "./components/_input.scss";
-@import "./components/_selected.scss";
-
-@import "./layout/_input-group.scss";
+@import "./base/_base.scss";
+@import "./base/_typography.scss";

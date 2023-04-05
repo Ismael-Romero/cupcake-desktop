@@ -1,0 +1,59 @@
+@include font-face($ff-title-regular, $url-font-title-regular);
+@include font-face($ff-text-light, $url-font-text-light);
+@include font-face($ff-text-regular, $url-font-text-regular);
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: $ff-title-regular, Calibri, sans-serif;
+}
+
+h1 { font-size: $fs-title-xxl;  }
+h2 { font-size: $fs-title-xl;   }
+h3 { font-size: $fs-title-l;    }
+h4 { font-size: $fs-title-m;    }
+h5 { font-size: $fs-title-s;    }
+h6 { font-size: $fs-title-xs;   }
+
+label {
+    margin: 0;
+    font-family: $ff-text-regular, "Segoe UI", sans-serif;
+    font-size: $fs-text;
+}
+
+p {
+    margin: 0;
+    font-family: $ff-text-regular, "Segoe UI", sans-serif;
+    font-size: $fs-text;
+}
+
+a {
+    font-family: $ff-text-regular, "Segoe UI", sans-serif;
+    font-size: $fs-text;
+    color: blue;
+}
+
+.text-regular {
+    font-family: $ff-text-regular, "Calibri Light", sans-serif;
+
+}
+
+.text-light {
+    font-family: $ff-text-light, "Calibri Light", sans-serif;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.cross-out {
+    text-decoration: line-through;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
