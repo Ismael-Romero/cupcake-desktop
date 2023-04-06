@@ -1,0 +1,54 @@
+.main-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+
+    width: 100%;
+    height: 100vh;
+
+    main {
+
+        width: 60%;
+        max-width: 70%;
+        margin: auto;
+
+        .welcome {
+            margin: 4rem 0;
+        }
+        .menu {
+            position: relative;
+
+            border-radius: 12px;
+
+            display: grid;
+            grid-gap: 1rem;
+            grid-auto-rows: auto;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+
+            justify-content: stretch;
+            justify-items: center;
+
+            .card{
+                grid-column: span 2;
+                box-sizing: border-box;
+                box-shadow: 0 0 20px $color-shadow-black-1;
+
+                &:hover {
+                    @include transition-basic(.3s);
+                    cursor: pointer;
+                    background-color: $color-blue-100;
+                    width: calc(100% - 20px);
+
+                    border:1px solid $color-blue;
+                }
+            }
+        }
+        .info {
+            position: relative;
+            text-align: center;
+            color: rgb(220,220,220);
+            margin: 4rem 0;
+        }
+    }
+}

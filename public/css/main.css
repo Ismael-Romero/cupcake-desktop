@@ -93,4 +93,128 @@ a {
   text-decoration: underline;
 }
 
+.card {
+  position: relative;
+  border-radius: 12px;
+  min-width: 200px;
+  width: 100%;
+  max-width: 520px;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.card.horizontal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.card.vertical {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(min(100%, auto), 1fr));
+}
+.card .image {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 100%;
+}
+.card .image.horizontal {
+  grid-column: span 1;
+}
+.card .image.vertical {
+  min-height: 120px;
+  height: auto;
+  max-height: 160px;
+  border-radius: 12px 12px 0 0;
+}
+.card .body {
+  position: relative;
+  padding: 16px;
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
+}
+.card .body .content {
+  position: relative;
+  width: 100%;
+}
+.card .body.horizontal {
+  grid-column: span 2;
+}
+
+.main-menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.main-menu main {
+  width: 60%;
+  max-width: 70%;
+  margin: auto;
+}
+.main-menu main .welcome {
+  margin: 4rem 0;
+}
+.main-menu main .menu {
+  position: relative;
+  border-radius: 12px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  justify-content: stretch;
+  justify-items: center;
+}
+.main-menu main .menu .card {
+  grid-column: span 2;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.main-menu main .menu .card:hover {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  background-color: rgb(207, 226, 255);
+  width: calc(100% - 20px);
+  border: 1px solid rgb(13, 110, 253);
+}
+.main-menu main .info {
+  position: relative;
+  text-align: center;
+  color: rgb(220, 220, 220);
+  margin: 4rem 0;
+}
+
+.view-login {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.view-login main {
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px 20px;
+  width: 60%;
+  max-width: 440px;
+  margin: auto;
+}
+.view-login main h1,
+.view-login main h2,
+.view-login main h3,
+.view-login main h4,
+.view-login main h5,
+.view-login main h6 {
+  margin: 0 0 12px;
+  background-color: red;
+}
+
 /*# sourceMappingURL=main.css.map */
