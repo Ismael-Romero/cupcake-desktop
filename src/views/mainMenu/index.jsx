@@ -1,46 +1,40 @@
-import {TouchableCard} from "../../components/Card/index.jsx";  //TODO: import from components and, update style
-import {useState} from "react";
-import {animationBounce, animationFade} from "../../constants/animation-css/index.js";
+import { useReducer } from "react";
+import { navigationMenu } from "./const/";
+import { reducerNavigation } from "./hooks/";
+import { TouchableCard } from "../../components/Card/index.jsx";  //TODO: import from components and, update style
+import { animationFade } from "../../constants/animation-css/index.js";
 import {Login} from "../Login/index.jsx";
-import { navigationMenu } from "../../navigation/mainMenu.js";
 
 export const MainMenu = () => {
 	
-	const [menuIsOpen, setMenuIsOpen] = useState(true);
-	const [loginIsOpen, setLoginIsOpen] = useState(false);
-	const [workspaceIsOpen, setWorkspaceIsOpen] = useState(false);
-	
-	const onAction = (action) => {
-		
-		if (action === 'm-login') {
-			setMenuIsOpen(false);
-			setLoginIsOpen(true)
-		}
-		
-		if (action === 'm-workspace') {
-			setMenuIsOpen(false);
-			setWorkspaceIsOpen(true)
-		}
-		
-		if (action === 'm-documentation') {
-			setMenuIsOpen(false);
-			
-		}
+	const initState = {
+		menu: true,
+		login: false,
+		workspace: false,
+		documentation: false
 	};
+	
+	const [state, dispatch] = useReducer(reducerNavigation, initState);
 	
 	return (
 		<div id={'v-main-menu'} className={'main-menu'}>
 			<main>
-				<section className={'welcome'}>
-					<h4>Good morning! : ) </h4>
+				<section className={'mm-s-welcome'}>
+					<h4 className={ animationFade.inUp }>Good morning! : ) </h4>
 				</section>
 				
-				{ menuIsOpen &&
+				{ state.menu &&
 					(
-						<section className={`menu ${animationFade.inUp}`}>
+						<section className={`mm-s-menu ${animationFade.inUp}`}>
 							{
 								navigationMenu.map((item,index) => (
-									<TouchableCard key={index} Id={item.id} Type={'vertical'} onAction={onAction}>
+									<TouchableCard
+										key={index}
+										Id={item.id}
+										Type={'vertical'}
+										onAction={() => {
+											dispatch({type: item.id})
+										}}>
 										<h6> {item.icon} {item.title} </h6>
 										<p> {item.content} </p>
 									</TouchableCard>
@@ -50,9 +44,13 @@ export const MainMenu = () => {
 					)
 				}
 				
-				{ loginIsOpen && ( <Login onVisible={setLoginIsOpen} showMenu={setMenuIsOpen} /> ) }
+				{
+					state.login && (
+						<Login DispatchMenu={dispatch}/>
+					)
+				}
 				
-				<section className={'info'}>
+				<section className={'mm-s-info'}>
 					<h6>Cupcake Desktop</h6>
 					<p> developed by @Ismael Romero</p>
 					<p> version: 2023.0.0.1</p>

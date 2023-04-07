@@ -32,8 +32,7 @@ export const useForm = (form) => {
 	
 	const onReset = (form) => {
 		Object.keys(form).map((key) => {
-			setFocusInvalidField(form[key].id);
-			
+			removeFocusInvalidField(form[key].id);
 		});
 		setState(form);
 	};
@@ -41,7 +40,7 @@ export const useForm = (form) => {
 	const isValidFields = () => {
 		let invalidFields = true;
 		Object.keys(state).map((key) => {
-			setFocusInvalidField(state[key].id);
+			removeFocusInvalidField(state[key].id);
 			if (state[key].required){
 				if (!state[key].value){
 					setFocusInvalidField(state[key].id);
@@ -56,7 +55,11 @@ export const useForm = (form) => {
 		const element = document.getElementById(id);
 		if (!element.hasAttribute('class')) {
 			element.setAttribute('class', 'focus-invalid');
-		}else{
+		}
+	};
+	const removeFocusInvalidField = (id) => {
+		const element = document.getElementById(id);
+		if (element.hasAttribute('class')) {
 			element.removeAttribute('class');
 		}
 	};

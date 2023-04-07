@@ -93,6 +93,201 @@ a {
   text-decoration: underline;
 }
 
+.input-group {
+  position: relative;
+  margin: 10px 0;
+  width: 100%;
+  height: auto;
+}
+.input-group label {
+  font-family: "Nunito Regular", "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+.input-group.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.input-group.row label {
+  margin: 0 0 15px;
+}
+.input-group.row input {
+  flex-grow: 4;
+}
+.input-group.column {
+  position: relative;
+  display: grid;
+  grid-area: auto;
+  grid-column: 4;
+  grid-row-gap: 0;
+  grid-column-gap: 1rem;
+  grid-auto-rows: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 5rem), 1fr));
+  align-items: center;
+  justify-content: stretch;
+}
+.input-group.column label {
+  position: relative;
+  height: auto;
+  max-height: 2.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  grid-column: span 2;
+}
+.input-group.column input {
+  grid-column: span 2;
+}
+
+.alert {
+  position: relative;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  padding: 12px;
+  width: 100%;
+  height: auto;
+  font-family: "Nunito Regular";
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.alert h1, .alert h2, .alert h3, .alert h4, .alert h5, .alert h6 {
+  font-size: 1rem;
+  margin: 0;
+}
+.alert p {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+.alert .icon-container {
+  margin: 4px;
+}
+.alert .icon-container i {
+  font-size: 1rem;
+}
+.alert .content-container {
+  margin: 0 10px;
+}
+.alert.basic {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255);
+}
+.alert.info {
+  background-color: rgb(61, 139, 253);
+}
+.alert.info i, .alert.info h1, .alert.info h2, .alert.info h3, .alert.info h4, .alert.info h5, .alert.info h6, .alert.info p {
+  color: rgb(3, 22, 51);
+}
+.alert.danger {
+  background-color: rgb(241, 174, 181);
+}
+.alert.danger i, .alert.danger h1, .alert.danger h2, .alert.danger h3, .alert.danger h4, .alert.danger h5, .alert.danger h6, .alert.danger p {
+  color: rgb(88, 21, 28);
+}
+.alert.success {
+  background-color: rgb(121, 223, 193);
+}
+.alert.success i, .alert.success h1, .alert.success h2, .alert.success h3, .alert.success h4, .alert.success h5, .alert.success h6, .alert.success p {
+  color: rgb(13, 80, 60);
+}
+.alert.warning {
+  background-color: rgb(255, 230, 156);
+}
+.alert.warning i, .alert.warning h1, .alert.warning h2, .alert.warning h3, .alert.warning h4, .alert.warning h5, .alert.warning h6, .alert.warning p {
+  color: rgb(102, 77, 3);
+}
+
+.btn {
+  position: relative;
+  font-family: "Nunito Regular", "Segoe UI", sans-serif;
+  font-size: 14px;
+  background-color: rgb(13, 110, 253);
+  border: none;
+  border-radius: 8px;
+  color: rgb(255, 255, 255);
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+.btn.auto {
+  width: auto;
+}
+.btn.small {
+  font-size: 12px;
+  padding: 5px 15px;
+}
+.btn.large {
+  font-size: 16px;
+  padding: 10px;
+}
+.btn.info {
+  color: rgb(255, 255, 255);
+  background-color: rgb(13, 110, 253);
+}
+.btn.info:focus {
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(3, 22, 51);
+  outline: none;
+}
+.btn.success {
+  color: rgb(255, 255, 255);
+  background-color: rgb(71, 159, 118);
+}
+.btn.success:focus {
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(25, 135, 84);
+  outline: none;
+}
+.btn.danger {
+  color: rgb(255, 255, 255);
+  background-color: rgb(227, 93, 106);
+}
+.btn.danger:focus {
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(44, 11, 14);
+  outline: none;
+}
+.btn.warning {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 218, 106);
+}
+.btn.warning:focus {
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(255, 193, 7);
+  outline: none;
+}
+.btn.white {
+  border: 1px solid #D0D0D0;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+.btn.white:focus {
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(3, 22, 51);
+  outline: none;
+}
+.btn:focus {
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgb(3, 22, 51);
+  outline: none;
+}
+
 .card {
   position: relative;
   border-radius: 12px;
@@ -141,6 +336,22 @@ a {
   grid-column: span 2;
 }
 
+input {
+  position: relative;
+  border: 1px solid #D0D0D0;
+  border-radius: 8px;
+  padding: 11px;
+  width: calc(100% - 22px);
+}
+input:focus {
+  border: 1px solid rgb(61, 139, 253);
+  outline: none;
+}
+input.focus-invalid {
+  border: 1px solid rgb(227, 93, 106);
+  outline: none;
+}
+
 .main-menu {
   position: relative;
   display: flex;
@@ -154,10 +365,12 @@ a {
   max-width: 70%;
   margin: auto;
 }
-.main-menu main .welcome {
+.main-menu main .mm-s-welcome {
   margin: 4rem 0;
+  display: flex;
+  justify-content: stretch;
 }
-.main-menu main .menu {
+.main-menu main .mm-s-menu {
   position: relative;
   border-radius: 12px;
   display: grid;
@@ -167,12 +380,12 @@ a {
   justify-content: stretch;
   justify-items: center;
 }
-.main-menu main .menu .card {
+.main-menu main .mm-s-menu .card {
   grid-column: span 2;
   box-sizing: border-box;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-.main-menu main .menu .card:hover {
+.main-menu main .mm-s-menu .card:hover {
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
   cursor: pointer;
@@ -180,7 +393,7 @@ a {
   width: calc(100% - 20px);
   border: 1px solid rgb(13, 110, 253);
 }
-.main-menu main .info {
+.main-menu main .mm-s-info {
   position: relative;
   text-align: center;
   color: rgb(220, 220, 220);
@@ -193,7 +406,7 @@ a {
   justify-content: center;
   justify-items: center;
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 .view-login main {
   position: relative;
@@ -202,10 +415,23 @@ a {
   border: none;
   border-radius: 12px;
   background-color: rgb(255, 255, 255);
-  padding: 20px 20px;
-  width: 60%;
+  padding: 40px 20px;
+  width: 100%;
   max-width: 440px;
-  margin: auto;
+  height: auto;
+}
+.view-login main .alert h1,
+.view-login main .alert h2,
+.view-login main .alert h3,
+.view-login main .alert h4,
+.view-login main .alert h5,
+.view-login main .alert h6 {
+  margin: 0;
+}
+.view-login main .actions {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 .view-login main h1,
 .view-login main h2,
@@ -213,8 +439,7 @@ a {
 .view-login main h4,
 .view-login main h5,
 .view-login main h6 {
-  margin: 0 0 12px;
-  background-color: red;
+  margin-bottom: 12px;
 }
 
 /*# sourceMappingURL=main.css.map */

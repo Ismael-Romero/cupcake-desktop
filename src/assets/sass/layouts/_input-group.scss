@@ -1,0 +1,56 @@
+.input-group {
+
+    position: relative;
+    margin: 10px 0;
+
+    width: 100%;
+    height: auto;
+
+    label {
+        font-family: $ff-text-regular, "Segoe UI", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    &.row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        label{
+            margin: 0 0 15px;
+        }
+        input {
+            flex-grow: 4;
+        }
+    }
+
+    &.column {
+        position: relative;
+        display: grid;
+        grid-area: auto;
+        grid-column: 4;
+        grid-row-gap: 0;
+        grid-column-gap: 1rem;
+        grid-auto-rows: 2.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 5rem), 1fr));
+
+        align-items: center;
+        justify-content: stretch;
+
+        label {
+            position: relative;
+            height: auto;
+            max-height: 2.5rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            grid-column: span 2;
+
+        }
+
+        input {
+            grid-column: span 2;
+        }
+
+    }
+}

@@ -13,10 +13,12 @@
         max-width: 70%;
         margin: auto;
 
-        .welcome {
+        .mm-s-welcome {
             margin: 4rem 0;
+            display: flex;
+            justify-content: stretch;
         }
-        .menu {
+        .mm-s-menu {
             position: relative;
 
             border-radius: 12px;
@@ -44,7 +46,7 @@
                 }
             }
         }
-        .info {
+        .mm-s-info {
             position: relative;
             text-align: center;
             color: rgb(220,220,220);

@@ -1,5 +1,6 @@
 export const Icon = {
 	apple: <i className="fa-brands fa-apple"></i>,
+	anglesLeft: <i className="fa-solid fa-angles-left"></i>,
 	arrowUpRight: <i className="fa-solid fa-arrow-up-right-from-square"></i>,
 	banCancel: <i className="fa-solid fa-ban"></i>,
 	barcode: <i className="fa-solid fa-barcode"></i>,
@@ -55,6 +56,8 @@ export const Icon = {
 	userMinus: <i className="fa-solid fa-user-minus"></i>,
 	userPlus: <i className="fa-solid fa-user-plus"></i>,
 	userXMark: <i className="fa-solid fa-user-xmark"></i>,
+	xMark: <i className="fa-solid fa-xmark"></i>,
+	circleXMark: <i className="fa-regular fa-circle-xmark"></i>,
 	wifi: <i className="fa-solid fa-wifi"></i>,
 	windows: <i className="fa-brands fa-windows"></i>,
 };

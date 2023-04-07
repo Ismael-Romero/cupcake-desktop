@@ -1,0 +1,75 @@
+.alert {
+    position: relative;
+
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px $color-shadow-black-1;
+
+    margin: 1rem 0;
+    padding: 12px;
+
+    width: calc(100%);
+    height: auto;
+
+    font-family: $ff-text-regular;
+    font-size: 12px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    .icon-container {
+        margin: 4px;
+        i {
+            font-size: 1rem;
+        }
+    }
+
+    .content-container {
+        margin: 0 10px;
+    }
+
+    &.basic {
+        box-shadow: 0 0 20px $color-shadow-black-1;
+        background-color: $color-white;
+    }
+
+    &.info {
+        background-color: $color-blue-400;
+        i, h1, h2, h3, h4, h5, h6, p{
+            color: $color-blue-900
+        }
+    }
+
+    &.danger {
+        background-color: $color-red-200;
+        i, h1, h2, h3, h4, h5, h6, p{
+            color: $color-red-800;
+        }
+    }
+
+    &.success {
+        background-color: $color-teal-300;
+        i, h1, h2, h3, h4, h5, h6, p{
+            color: $color-teal-800;
+        }
+    }
+
+    &.warning {
+        background-color: $color-yellow-200;
+        i, h1, h2, h3, h4, h5, h6, p{
+            color: $color-yellow-800;
+        }
+    }
+}

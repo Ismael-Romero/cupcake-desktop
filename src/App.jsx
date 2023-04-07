@@ -8,6 +8,7 @@ const App = () => {
         <SessionContextProvider>
             <GlobalSettingProvider>
                 <MainMenu/>
+                {/* ... */}
             </GlobalSettingProvider>
         </SessionContextProvider>
   );

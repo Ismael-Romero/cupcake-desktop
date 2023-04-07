@@ -1,0 +1,73 @@
+.btn {
+    position: relative;
+
+    font-family: $ff-text-regular, "Segoe UI", sans-serif;
+    font-size: 14px;
+
+    background-color: $color-blue;
+    border: none;
+    border-radius: 8px;
+
+    color: $color-white;
+
+    margin-top: 20px;
+    padding: 10px;
+
+    width: 100%;
+    max-width: 100%;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @include transition-basic(.1s);
+
+    &.auto {
+        width: auto;
+    }
+
+    &.small {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+
+    &.large {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    &.info {
+        color: $color-white;
+        background-color: $color-blue;
+        @include focus-outline(.6s, $color-blue-900);
+    }
+
+
+    &.success {
+        color: $color-white;
+        background-color: $color-green-400;
+        @include focus-outline(.6s, $color-green);
+    }
+
+    &.danger {
+        color: $color-white;
+        background-color: $color-red-400;
+        @include focus-outline(.6s, $color-red-900);
+    }
+
+    &.warning{
+        color: $color-black;
+        background-color: $color-yellow-300;
+        @include focus-outline(.6s, $color-yellow);
+    }
+
+    &.white {
+        border: 1px solid #D0D0D0;
+        background-color: $color-white;
+        color: $color-black;
+
+        @include focus-outline(.6s, $color-blue-900);
+    }
+
+    @include focus-outline(.6s, $color-blue-900);
+}
